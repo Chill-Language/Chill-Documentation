@@ -7,7 +7,7 @@ Chill 的主要实现 ICM 目前还在开发中。
 # 目录
 
 基础
-- 数据、动态变量和表达式
+- [数据、动态变量和表达式](https://github.com/ChillMagic/Chill-Documentation/blob/master/zh_CN/1.数据、动态变量和表达式.md)
 - 布尔量 与 条件表达式
 - 纯函数
 - 类型
