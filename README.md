@@ -9,7 +9,7 @@ Chill 的主要实现 ICM 目前还在开发中。
 # 目录
 
 基础内容
-- [数据、动态变量和表达式](./zh_CN/1.数据、动态变量和表达式.md)
+- [数据、表达式和动态变量](./zh_CN/1.数据、表达式和动态变量.md)
 - 布尔量 与 条件表达式
 - 纯函数 与 常量
 - 类型
@@ -31,7 +31,7 @@ Chill 的主要实现 ICM 目前还在开发中。
 （内容暂无）
 
 Base Contents:
-- Data, Dynamic Variable & Expression
+- Data, Expression & Dynamic Variable
 - Boolean & Conditional Dxpression
 - Pure Function & Constant
 - Type
