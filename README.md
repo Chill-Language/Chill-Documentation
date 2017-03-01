@@ -1,15 +1,17 @@
 # Chill 通用型程序设计语言 文档
 
 Chill 语言是一门 同时支持动态与静态类型的、主要用于数据处理的高级程序设计语言。
+
 Chill 的设计思想主要来源于，C语言 和 Lisp语言。
+
 Chill 的主要实现 ICM 目前还在开发中。
 
 # 目录
 
-基础
+基础内容
 - [数据、动态变量和表达式](https://github.com/ChillMagic/Chill-Documentation/blob/master/zh_CN/1.数据、动态变量和表达式.md)
 - 布尔量 与 条件表达式
-- 纯函数
+- 纯函数 与 常量
 - 类型
 - 静态变量与变量空间
 - 字符串、符号量
@@ -22,6 +24,7 @@ Chill 的主要实现 ICM 目前还在开发中。
 高级内容
 - I/O
 - 与 C语言 的交互
+- 提高 Chill 程序运行效率的方法
 
 # 英文目录
 
@@ -30,7 +33,7 @@ Chill 的主要实现 ICM 目前还在开发中。
 Base Contents:
 - Data, Dynamic Variable & Expression
 - Boolean & Conditional Dxpression
-- Pure Function
+- Pure Function & Constant
 - Type
 - Static Variable & Variable Space
 - String, Symbol
@@ -43,3 +46,5 @@ Base Contents:
 Advanced Contents:
 - I/O
 - Interaction with C language
+- Improve efficiency for the Chill program
+- 
