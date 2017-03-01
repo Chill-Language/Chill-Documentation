@@ -47,4 +47,3 @@ Advanced Contents:
 - I/O
 - Interaction with C language
 - Improve efficiency for the Chill program
-- 
