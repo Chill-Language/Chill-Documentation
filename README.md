@@ -6,6 +6,15 @@ Chill 的设计思想主要来源于，C语言 和 Lisp语言。
 
 Chill 的主要实现 ICM 目前还在开发中。
 
+# 内容
+
+本文档包含了：
+
+- **Chill 语言导引**
+	- 帮助用户从其他语言快速地掌握 Chill 语言
+- **Chill 语言参考**
+	- Chill 语言的 语法、语义、核心库 等全部内容
+
 # 标记
 
 文档的编辑是一个长期的过程，Chill 语言在此过程中可能会产生变化。文档可能在某部分是过时的，为了引起读者的注意，本文档使用如下标记：
@@ -13,12 +22,14 @@ Chill 的主要实现 ICM 目前还在开发中。
 - **[?]** 标记：表示该处的表述是暂时的。日后可能会发生变动。
 - **[!]** 标记：表示该处与其他内容冲突，该处将被修改。
 
-# 目录
+# Chill 语言导引
 
-## 基础内容
+## 目录
+
+### 基础内容
 - [数据、表达式和动态变量](./zh_CN/1.数据、表达式和动态变量.md)
 - [布尔量 与 条件表达式](./zh_CN/2.布尔量与条件表达式.md)
-- 纯函数 与 常量
+- [纯函数 与 常量](./zh_CN/3.纯函数与常量.md)
 - 类型
 - 静态变量与变量空间
 - 字符串、符号量
@@ -28,16 +39,16 @@ Chill 的主要实现 ICM 目前还在开发中。
 - 数据权限
 - 非纯函数、自由函数 与 函数对象
 
-## 高级内容
+### 高级内容
 - I/O
 - 与 C语言 的交互
 - 提高 Chill 程序运行效率的方法
 
-# 英文目录
+## 英文目录
 
 （内容暂无）
 
-## Base Contents:
+### Base Contents:
 - Data, Expression & Dynamic Variable
 - Boolean & Conditional Expression
 - Pure Function & Constant
@@ -50,7 +61,19 @@ Chill 的主要实现 ICM 目前还在开发中。
 - Data Authority
 - Impure Function, Free Function & Function Object
 
-## Advanced Contents:
+### Advanced Contents:
 - I/O
 - Interaction with C language
 - Improve efficiency for the Chill program
+
+# Chill 语言参考
+
+## 目录
+
+- 语法、语义
+- [内置类型](./Reference/zh_CN/内置类型.md)
+- 核心库
+
+## 英文目录
+
+（暂无）
