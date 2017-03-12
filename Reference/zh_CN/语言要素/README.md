@@ -46,7 +46,7 @@ Chill 的表达式由位于 ```()``` 左端的 可调用对象/表达式 或 操
 #### ?
 
 ```
-(? bexpr sexpr1 sexpr2)
+(? bexpr sexpr1 <sexpr2>)
 ```
 
 #### if
