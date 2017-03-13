@@ -19,7 +19,6 @@ Chill 的表达式由位于 ```()``` 左端的 可调用对象/表达式 或 操
 - texpr : 类型表达式
 - cexpr : 常量表达式
 - vexpr : 带有值的表达式
-- V : 变量对象
 - I : 标识符对象
 - T : 类型对象
 - ```...``` 位于后缀 : 一个或多个表达式
@@ -80,7 +79,7 @@ Chill 的表达式由位于 ```()``` 左端的 可调用对象/表达式 或 操
 #### for
 
 ```
-(for V in rexpr
+(for I in rexpr
    sexpr ...
 )
 ```
@@ -88,37 +87,37 @@ Chill 的表达式由位于 ```()``` 左端的 可调用对象/表达式 或 操
 #### let
 
 ```
-(let V vexpr)
+(let I vexpr)
 ```
 
 #### set
 
 ```
-(set V vexpr)
+(set I vexpr)
 ```
 
 #### cpy
 
 ```
-(cpy <V> vexpr)
+(cpy <I> vexpr)
 ```
 
 #### ref
 
 ```
-(ref V V2)
+(ref I I2)
 ```
 
 #### dim
 
 ```
-(dim V texpr)
+(dim I texpr)
 ```
 
 #### restrict
 
 ```
-(restrict V texpr)
+(restrict I texpr)
 ```
 
 #### define
@@ -130,7 +129,7 @@ Chill 的表达式由位于 ```()``` 左端的 可调用对象/表达式 或 操
 #### defunc
 
 ```
-(defunc I [<(V <: Type>)>*] <-> Type>
+(defunc I [<(I <: Type>)>*] <-> Type>
   sexpr ...
 )
 ```
@@ -138,7 +137,7 @@ Chill 的表达式由位于 ```()``` 左端的 可调用对象/表达式 或 操
 #### function
 
 ```
-(function <I> [<V <: Type>>*] <-> Type>
+(function <I> [<(I <: Type>)>*] <-> Type>
    sexpr ...
 )
 ```
