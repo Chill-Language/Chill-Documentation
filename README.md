@@ -77,7 +77,7 @@ Chill 的主要实现 ICM 目前还在开发中。
 
 - [语言要素](./Reference/zh_CN/语言要素/README.md)
 - [内置类型](./Reference/zh_CN/内置类型/README.md)
-- 核心库
+- [核心库](./Reference/zh_CN/核心库/README.md)
 
 ## 英文目录
 
