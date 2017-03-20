@@ -2,6 +2,16 @@
 
 ## Boolean
 
+### =
+(Boolean Boolean ...) -> Boolean
+
+返回判断多个布尔值是否相等的布尔值。
+
+### ->String
+(Boolean) -> String
+
+返回布尔值转换为String后的值。
+
 ### and
 (Boolean Boolean ...) -> Boolean
 
@@ -21,11 +31,6 @@
 (Boolean Boolean ...) -> Boolean
 
 返回多个布尔值的异或。
-
-### =
-(Boolean Boolean ...) -> Boolean
-
-返回判断多个布尔值是否相等的布尔值。
 
 ## Number
 
@@ -78,6 +83,11 @@
 
 返回判断多个数值参数是否按照从大到小排列（允许重复）的布尔值。
 
+### ->String
+(Number) -> String
+
+返回数值转换为String后的值。
+
 ### abs
 (Number) -> Number
 
@@ -107,3 +117,36 @@
 (Number Number) -> Number
 
 返回两个数值的余。
+
+## String
+
+### +
+(String String ...) -> String
+
+返回多个字符串的连接。
+
+### ->
+(Type String) -> [Type]
+
+根据传入的Type返回字符串转换后的对应的Type类型的值。
+
+### ->List
+(String) -> List
+
+返回字符串转换为List后的字符表。
+
+### ->Number
+(String) -> Number
+
+返回字符串转换为Number后的值。
+
+### ->Symbol
+(String) -> Symbol
+
+返回字符串转换为Symbol后的值。
+
+### sub
+[(str : String) (id : Integer) (len : Integer)] -> String
+
+返回字符串从id位置起，长度为len的子串。
+
