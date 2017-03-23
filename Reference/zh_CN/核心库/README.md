@@ -78,11 +78,6 @@
 
 返回判断多个数值参数是否按照从大到小排列（允许重复）的布尔值。
 
-### ->String
-(Number) -> String
-
-返回数值转换为String后的值。
-
 ### abs
 (Number) -> Number
 
