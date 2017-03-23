@@ -7,11 +7,6 @@
 
 返回判断多个布尔值是否相等的布尔值。
 
-### ->String
-(Boolean) -> String
-
-返回布尔值转换为String后的值。
-
 ### and
 (Boolean Boolean ...) -> Boolean
 
@@ -124,11 +119,6 @@
 (String String ...) -> String
 
 返回多个字符串的连接。
-
-### ->
-(Type String) -> [Type]
-
-根据传入的Type返回字符串转换后的对应的Type类型的值。
 
 ### ->List
 (String) -> List
