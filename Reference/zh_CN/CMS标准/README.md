@@ -8,6 +8,7 @@ CMS 是一种高度抽象的中间表示。
 
 CMS 主要由三个段组成：
 
+- .datas 段 ： 存放各种数据
 - .idents 段 ： 对于各种标识符进行声明。
 - .imports 段 ： 对于库的导入。
 - .code 段 ： 主要的运行代码。
@@ -39,9 +40,12 @@ CMS 主要由三个段组成：
 经过 ICM 会生成如下 CMS 代码：
 
 ```
-.imports:
-        .room   %root
-        .import %Core
+;; Main.cms
+
+.datas:
+        .string $1   "Hello "
+        .string $2   "World!"
+        .string $3   "call f."
 
 .idents:
         .room   %root
@@ -49,7 +53,6 @@ CMS 主要由三个段组成：
         .dyvarb b
         .stvarb c    Int
         .data   d    12
-        .data   $1   "call f."
         .func   f
         .module Math
         .room   %Math
@@ -57,25 +60,47 @@ CMS 主要由三个段组成：
         .room   %root
         .entry  main
 
-.code:
-        
+.imports:
+        .room   %root
+        .import %Core
+        .using  println(%Core)
+
+.codes:
+
 f:
         mov  %res, %1
         ret
-        
+
 main:
-        let  a, "Hello "
-        let  b, "World!"
+        let  a, $1
+        let  b, $2
         call %1, +, a b
         call %0, println, %1
         set  c, 0x100
         call %0, println, c
         call %0, println, d
-        call %1, f, $1
+        call %1, f, $3
         call %0, println, %1
         call %0, println, pi(%Math)
         ret
 ```
+
+## 数据
+
+CMS 的数据分为可存放于指令中的短数据 与 只能存放于数据段的长数据。
+
+短数据 是 不大于 32位 的数据。包括但不限于：
+- Boolean 类型数据。
+- Int8, Int16, Int32, UInt8, UInt16, UInt32 等机器无关的不超过32位的定长数据。
+
+长数据 是 长度超过 32位，或者不定长的数据。包括但不限于：
+- String 字符串数据。
+- Int64, UInt64 等机器无关的超过32位定长数据。
+
+机器相关的数据具有未知的长度，根据具体的编译时信息来确定。包括但不限于：
+
+- Int, UInt, Float, Double 等不定长数据。
+- CPointer C 指针数据。
 
 ## 符号表
 
