@@ -48,23 +48,14 @@ CMS 主要由三个段组成：
         .string $3   "call f."
 
 .idents:
-        .room   %root
-        .dyvarb a
-        .dyvarb b
-        .stvarb c    Int
-        .data   d    12
-        .func   f
         .module Math
-        .room   %Math
-        .data   pi   3.14
-        .room   %root
+        .data   Math$pi   3.14
         .entry  main
 
 .imports:
-        .room   %root
         .import %Core
-        .using  println(%Core)
-
+        .using  Core
+        
 .codes:
 
 f:
@@ -72,6 +63,10 @@ f:
         ret
 
 main:
+        .dyvarb a
+        .dyvarb b
+        .stvarb c    Int
+        .data   d    12
         let  a, $1
         let  b, $2
         call %1, +, a b
@@ -81,7 +76,7 @@ main:
         call %0, println, d
         call %1, f, $3
         call %0, println, %1
-        call %0, println, pi(%Math)
+        call %0, println, Math$pi
         ret
 ```
 
