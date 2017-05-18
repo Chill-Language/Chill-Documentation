@@ -55,6 +55,7 @@ CMS 主要由三个段组成：
 .imports:
         .import %Core
         .using  Core
+        .using  println Core$Console$println
         
 .codes:
 
