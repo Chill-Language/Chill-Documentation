@@ -6,7 +6,7 @@ CMS 是一种高度抽象的中间表示。
 
 ## 概述
 
-CMS 主要由三个段组成：
+CMS 主要由四个段组成：
 
 - .datas 段 ： 存放各种数据
 - .idents 段 ： 对于各种标识符进行声明。
@@ -43,19 +43,19 @@ CMS 主要由三个段组成：
 ;; Main.cms
 
 .datas:
-        .string $1   "Hello "
-        .string $2   "World!"
-        .string $3   "call f."
+        .string #1   "Hello "
+        .string #2   "World!"
+        .string #3   "call f."
 
 .idents:
         .module Math
-        .data   Math$pi   3.14
+        .data   Math#pi   3.14
         .entry  main
 
 .imports:
         .import %Core
         .using  Core
-        .using  println Core$Console$println
+        .using  println Core#Console#println
         
 .codes:
 
@@ -68,16 +68,16 @@ main:
         .dyvarb b
         .stvarb c    Int
         .data   d    12
-        let  a, $1
-        let  b, $2
+        let  a, #1
+        let  b, #2
         call %1, +, a b
         call %0, println, %1
         set  c, 0x100
         call %0, println, c
         call %0, println, d
-        call %1, f, $3
+        call %1, f, #3
         call %0, println, %1
-        call %0, println, Math$pi
+        call %0, println, Math#pi
         ret
 ```
 
@@ -112,6 +112,37 @@ Chill 语言共有以下几种符号：
 
 每个文件，只要使用了符号，都要引用符号表。
 不同文件可以共用一个符号表，也可以在每个文件内单独维护一个符号表。
+
+## 符号的使用
+
+CMS 的符号设计，尽量保证大多数语言能够无障碍地将标识符直接书写于 CMS 中。
+
+在 Chill 语言、 常见的 Lisp 方言 (如Scheme, Common Lisp) 中，标识符允许数字、字母以及：
+```
+ ! $ % & * + - . / : < = > ? @ ^ _ ~
+ ```
+ 等作为标识符的命名，其中数字不能开头。(Chill 不允许```.```符号)
+
+在 C语言 以及其他参照 C语言命名法的语言（如 C++，Java 等） 中，标识符的允许仅为 数字、字母以及下划线。
+
+考虑以上，选用 ```#``` 符号作为特殊符号。
+
+当存在使用了 ```%``` 符号命名的标识符时， 使用 ```%%``` 代替 ```%```。
+
+如：
+
+```
+(defunc % [x y] (return (Core.Calc.% x y)))
+```
+
+通常编译为：
+
+```
+%%:
+        call %res, Core#Calc#%%, %1, %2
+        ret
+```
+
 
 ## 寄存器
 
